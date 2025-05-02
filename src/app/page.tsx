@@ -1,5 +1,5 @@
 "use client";
-import { Poppins } from "next/font/google";
+
 import React, {
   useState,
   useEffect,
@@ -20,14 +20,12 @@ import {
   Volume2,
   Repeat,
   Shuffle,
-  User,
-  X,
   Volume1,
   VolumeX,
-  Repeat1,
   PanelRightOpen,
   PanelLeftOpen,
 } from "lucide-react";
+import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
   display: 'swap',
@@ -356,11 +354,11 @@ const Sidebar: React.FC = () => {
     <div
       className={`fixed top-0 left-0 h-full bg-[#151515] md:bg-[#151515b7] z-30 transition-all duration-300 ${sidebarWidth}`}
     >      
-      <div className={`p-4 sm:p-6 ${!isSidebarOpen && windowWidth <= 768 ? "hidden" : ""}`}>
+      <div className={`p-4 sm:p-6 ${!isSidebarOpen && windowWidth <= 768 ? "hidden" : ''}`}>
         <div className="mb-6 sm:mb-8">
           <div className="flex w-full justify-between items-start">
             <h1
-              className={`text-xl sm:text-2xl font-extrabold tracking-tight text-white mb-4 sm:mb-6 cursor-pointer ${!isSidebarOpen ? "hidden" : ""}`}
+              className={`text-xl sm:text-2xl font-extrabold tracking-tight text-white mb-4 sm:mb-6 cursor-pointer ${!isSidebarOpen ? "hidden" : ''}`}
               onClick={() => {
                 setCurrentPage('home');
                 if (windowWidth <= 768) setIsSidebarOpen(false);
@@ -368,7 +366,7 @@ const Sidebar: React.FC = () => {
             >
               Spotify
             </h1>
-            <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className={`bg-black rounded-full p-1 text-white hover:text-white/75 cursor-pointer ${!isSidebarOpen ? "hidden" : ""}`}>
+            <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className={`bg-black rounded-full p-1 text-white hover:text-white/75 cursor-pointer ${!isSidebarOpen ? "hidden" : ''}`}>
               <PanelRightOpen size={20} />
             </button>
           </div>
@@ -413,7 +411,7 @@ const Sidebar: React.FC = () => {
         </div>
 
         {(isSidebarOpen || windowWidth > 768) && (
-          <div className={`mt-6 sm:mt-8 ${!isSidebarOpen && windowWidth > 768 ? "hidden" : ""}`}>
+          <div className={`mt-6 sm:mt-8 ${!isSidebarOpen && windowWidth > 768 ? "hidden" : ''}`}>
             <div className="flex items-center justify-between mb-3 sm:mb-4">
               <div className="flex items-center text-gray-400 cursor-pointer hover:text-white">
                 <Plus size={windowWidth <= 320 ? 16 : 20} />
@@ -509,7 +507,7 @@ const Player: React.FC = () => {
 
   const isCompactScreen = windowWidth <= 350;
 
-  const hideOnSmallScreen = isCompactScreen ? "hidden" : "";
+  const hideOnSmallScreen = isCompactScreen ? "hidden" : '';
 
   if (!currentSong) {
     return (
@@ -519,7 +517,7 @@ const Player: React.FC = () => {
             <div className="h-10 w-10 sm:h-14 sm:w-14 bg-gray-800 rounded mr-2 sm:mr-3 flex items-center justify-center">
               <Music size={16} className="text-gray-600" />
             </div>
-            <div className={`${isCompactScreen ? "hidden sm:block" : ""}`}>
+            <div className={`${isCompactScreen ? "hidden sm:block" : ''}`}>
               <p className="text-gray-600 text-xs sm:text-sm font-medium">
                 Select a track
               </p>
@@ -561,7 +559,7 @@ const Player: React.FC = () => {
           </div>
 
           <div
-            className={`flex items-center justify-end w-1/4 ${isCompactScreen ? "hidden sm:flex" : ""
+            className={`flex items-center justify-end w-1/4 ${isCompactScreen ? "hidden sm:flex" : ''
               }`}
           >
             <div className="flex items-center">
@@ -596,7 +594,7 @@ const Player: React.FC = () => {
             className="h-10 w-10 sm:h-14 sm:w-14 object-cover rounded mr-2 sm:mr-3 flex-shrink-0"
           />
           <div
-            className={`overflow-hidden ${isCompactScreen ? "hidden sm:block" : ""
+            className={`overflow-hidden ${isCompactScreen ? "hidden sm:block" : ''
               }`}
           >
             <p className="text-white text-xs sm:text-sm font-medium truncate">
@@ -607,7 +605,7 @@ const Player: React.FC = () => {
             </p>
           </div>
           <button
-            className={`ml-2 sm:ml-4 text-gray-400 hover:text-white ${isCompactScreen ? "hidden sm:inline" : ""
+            className={`ml-2 sm:ml-4 text-gray-400 hover:text-white ${isCompactScreen ? "hidden sm:inline" : ''
               }`}
           >
             <Heart size={isCompactScreen ? 12 : 16} />
@@ -617,8 +615,8 @@ const Player: React.FC = () => {
         <div className="flex flex-col items-center w-2/4">
           <div className="flex items-center space-x-1 sm:space-x-6">
             <button
-              className={`text-gray-400 hover:text-white cursor-pointer ${isShuffle ? "text-green-500" : ""
-                } ${isCompactScreen ? "hidden sm:inline" : ""}`}
+              className={`text-gray-400 hover:text-white cursor-pointer ${isShuffle ? "text-green-500" : ''
+                } ${isCompactScreen ? "hidden sm:inline" : ''}`}
               onClick={() => setIsShuffle(!isShuffle)}
             >
               <Shuffle size={isCompactScreen ? 12 : 16} />
@@ -646,8 +644,8 @@ const Player: React.FC = () => {
               <SkipForward size={isCompactScreen ? 16 : 20} />
             </button>
             <button
-              className={`text-gray-400 hover:text-white cursor-pointer ${isRepeat !== "off" ? "text-green-500" : ""
-                } ${isCompactScreen ? "hidden sm:inline" : ""}`}
+              className={`text-gray-400 hover:text-white cursor-pointer ${isRepeat !== "off" ? "text-green-500" : ''
+                } ${isCompactScreen ? "hidden sm:inline" : ''}`}
               onClick={() => {
                 if (isRepeat === "off") setIsRepeat("all");
                 else if (isRepeat === "all") setIsRepeat("one");
@@ -683,7 +681,7 @@ const Player: React.FC = () => {
         </div>
 
         <div
-          className={`flex items-center justify-end w-1/4 ${isCompactScreen ? "hidden sm:flex" : ""
+          className={`flex items-center justify-end w-1/4 ${isCompactScreen ? "hidden sm:flex" : ''
             }`}
         >
           <div className="flex items-center">
@@ -771,10 +769,20 @@ const TopBar: React.FC = () => {
       )} */}
 
       <div className="flex items-center">
-        <div className="bg-black rounded-full p-1 cursor-pointer">
-          <User size={windowWidth <= 320 ? 20 : 24} className="text-white" />
+        <div className="bg-black rounded-full p-2 flex items-center space-x-2">
+          <button className="px-4 py-2 text-sm text-white bg-gray-800 rounded-full hover:bg-gray-700 transition"
+            onClick={()=>{alert('Signing up!')}}
+          >
+            Signup
+          </button>
+          <button className="px-4 py-2 text-sm text-black bg-green-500 rounded-full hover:bg-green-400 transition"
+            onClick={()=>{alert('Logging in...!')}}
+          >
+            Login
+          </button>
         </div>
       </div>
+
     </div>
   );
 };
@@ -937,7 +945,7 @@ const SearchPage: React.FC = () => {
                       className="w-full aspect-square object-cover rounded-md shadow-lg"
                     />
                     <button
-                      className="absolute bottom-2 right-2 bg-green-500 rounded-full p-2 sm:p-3 opacity-0 group-hover:opacity-100 transition-opacity shadow-lg hover:scale-105 transform transition"
+                      className="absolute bottom-2 right-2 bg-green-500 rounded-full p-2 sm:p-3 opacity-0 group-hover:opacity-100 shadow-lg hover:scale-105 transform transition"
                       onClick={(e) => {
                         e.stopPropagation();
                         if (playlist.songs.length > 0) {
@@ -1170,7 +1178,7 @@ const PlaylistPage: React.FC = () => {
           {currentPlaylist.songs.map((song, index) => (
             <div
               key={song.id}
-              className={`grid grid-cols-12 text-gray-400 hover:bg-gray-800 rounded-md p-2 cursor-pointer ${currentSong && currentSong.id === song.id ? "bg-gray-800" : ""
+              className={`grid grid-cols-12 text-gray-400 hover:bg-gray-800 rounded-md p-2 cursor-pointer ${currentSong && currentSong.id === song.id ? "bg-gray-800" : ''
                 }`}
               onClick={() => {
                 if (currentSong && currentSong.id === song.id) {
@@ -1223,7 +1231,7 @@ const PlaylistPage: React.FC = () => {
   );
 };
 
-const Music = ({ size = 24, className = "" }) => (
+const Music = ({ size = 24, className = '' }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}
@@ -1366,7 +1374,7 @@ const SpotifyClone: React.FC = () => {
   const [currentPlaylist, setCurrentPlaylist] = useState<Playlist | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentSong, setCurrentSong] = useState<Song | null>(null);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 0
   );
@@ -1709,3 +1717,7 @@ const SpotifyClone: React.FC = () => {
 };
 
 export default SpotifyClone;
+
+// export default function Remove() {
+//   return <></>;
+// }
