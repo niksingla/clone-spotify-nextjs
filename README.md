@@ -1,7 +1,7 @@
 
 # Next.JS based Spotify Clone App
 
-This is a **Clone of Spotify App** developed using **Next.js**, **TypeScript**, and **Tailwind CSS**. The platform enables users to interact with various simulation modules through a clean, fast, and responsive UI.
+This is a **Clone of Spotify App** developed using **Next.js**, **TypeScript**, and **Tailwind CSS**. It has demo songs for now.
 
 
 
