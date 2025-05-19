@@ -1,4 +1,14 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+# Next.JS based Spotify Clone App
+
+This is a **Clone of Spotify App** developed using **Next.js**, **TypeScript**, and **Tailwind CSS**. The platform enables users to interact with various simulation modules through a clean, fast, and responsive UI.
+
+
+
+## Live Demo
+
+https://spotify-clone-nine-flame.vercel.app/
+
 
 ## Getting Started
 
